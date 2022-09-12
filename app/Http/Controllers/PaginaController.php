@@ -8,7 +8,7 @@ class PaginaController extends Controller
 {
     public function contacts($registro_id = null)
     {
-        if (!empty($registro_id)){
+        if ($registro_id == '1234'){
 
             $nombre = 'Charlie';
             $correo = 'CharlieBrown@hotmail.com';
