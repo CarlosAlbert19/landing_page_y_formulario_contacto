@@ -21,6 +21,20 @@ class PaginaController extends Controller
         return view('contacto', compact('nombre', 'correo'));
     }
 
+    public function recibeFormContacto(Request $request)
+    {
+        $request->validate([
+            'nombre'=>'required|max:255|min:3',
+            'correo'=>['required', 'email'],
+            'comentario'=>'required',
+        ]);
+        
+        //dd($request->all());
+        // dd($request->input('nombre'));
+        // dd($request->input('correo'));
+        // dd($request->input('comentario'));
+    }
+
     public function pagina_de_caida()
     {
         return view('landingpage');
